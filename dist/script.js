@@ -1,12 +1,10 @@
+import dotenv from "dotenv";
+dotenv.config();
 window.addEventListener("load", () => {
-    const key = `AIzaSyCrXj6b0cD8ScR8NhSMk0MVe8_VjBAfD0s`;
-    const playlistId = "PLA0HnjmxS-kY5elkwX7ysTGSr8sQnJkew";
-    const url = "https://youtube.googleapis.com/youtube/v3/playlistItems";
-    const options = {
-        part: "snippet",
-        key,
-        playlistId,
-    };
+    const key = process.env.key;
+    const playlistId = process.env.playlistId;
+    const url = process.env.url;
+    const options = process.env.options;
 
     loadVids();
 
